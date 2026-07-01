@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+<title>Crowdfunfing - PROJETS</title>
+
+<link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/feather/feather.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/icons/flags/flags.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/all.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/datatables/datatables.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+<body>
+
+<div class="main-wrapper">
+
+    <div class="header">
+
+        <div class="header-left">
+            <a href="" >
+                <img style="width:180px; height: 180px;" src="{% static 'assets/img/crowlogo.png' %}" alt="Logo" >
+            </a>
+            <a href="{% url 'index' %}" class="logo logo-small">
+                <img src="{% static 'assets/img/logo-small.png' %}" alt="Logo" width="30" height="30">
+            </a>
+        </div>
+        <div class="menu-toggle">
+            <a href="javascript:void(0);" id="toggle_btn">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+
+        <div class="top-nav-search">
+            <form>
+                <input type="text" class="form-control" placeholder="Rechercher ici...">
+                <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <a class="mobile_btn" id="mobile_btn">
+            <i class="fas fa-bars"></i>
+        </a>
+
+        <ul class="nav user-menu">
+      
+
+            <li class="nav-item zoom-screen me-2">
+                <a href="#" class="nav-link header-nav-list win-maximize">
+                    <img src="{% static 'assets/img/icons/header-icon-04.svg' %}" alt="">
+                </a>
+            </li>
+
+            <li class="nav-item dropdown has-arrow new-user-menus">
+                <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                    <span class="user-img">
+                        <img class="rounded-circle" src="http://127.0.0.1:8000/{{en.Photo.url}}" width="31"
+                            alt="Soeng Souy">
+                        <div class="user-text">
+                            <h6>{{en.username}} - {{en.first_name}} - {{en.last_name}}</h6>
+                            <p class="text-muted mb-0">{{en.statut}}</p>
+                        </div>
+                    </span>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="user-header">
+                        <div class="avatar avatar-sm">
+                            <img src="{{en.Photo.url}}" alt="User Image"
+                                class="avatar-img rounded-circle">
+                        </div>
+                        <div class="user-text">
+                            <h6>{{en.username}} - {{en.first_name}} - {{en.last_name}}</h6>
+                            <p class="text-muted mb-0">{{en.statut}}</p>
+                        </div>
+                    </div>
+                    <a class="dropdown-item" href="{% url 'profile' %}">Mon Profile</a>
+                   
+                    <a class="dropdown-item" href="{% url 'deconnexion'  %}">Deconnexion</a>
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+                <li class="menu-title">
+                    <span>Menu Principal</span>
+                </li>
+                <li class="submenu active">
+                    <a href="#"><i class="feather-grid"></i> <span>Accueil</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="{% url 'index' %}" >Details</a></li>
+                       
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-book-reader"></i> <span> Type des Projets</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="{% url 'list_type' %}"> Liste des type</a></li>
+                        <li><a href="{% url 'add_type' %}">Ajouter Type</a></li>
+                        
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-graduation-cap"></i> <span> Projets</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="{% url 'list_projets' %}" class="active" > Liste de projets</a></li>
+                       
+                        <li> <a href="{% url 'add_projet' %}">Ajouter Projets</a></li>
+                       
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span> Utilisateurs</span> <span
+                            class="menu-arrow"></span></a>
+                            <ul>
+                                <li><a href="{% url 'list_utili' %}" >Liste des Utilisateurs</a></li>
+                               
+                            </ul>
+                </li>
+         
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-building"></i> <span> Contributions</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="{% url 'contributions' %}">Liste des contributions</a></li>
+                       
+                    </ul>
+                </li>
+              
+              
+               
+                
+    
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-shield-alt"></i> <span> Authentification </span> <span
+                            class="menu-arrow"></span></a>
+                            <ul>
+                                <li><a href="{% url 'login' %}">Login</a></li>
+                                <li><a href="{% url 'registe' %}">Nouveau compte</a></li>
+                                <li><a href="{% url 'oublie' %}">Mot de passe oublié</a></li>
+                                
+                            </ul>
+                </li>
+              
+               
+               
+                
+               
+                
+               
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+    
+    <div class="page-header">
+    <div class="row align-items-center">
+    <div class="col">
+    <h3 class="page-title">Projets</h3>
+    <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'index' %}">Accueil</a></li>
+    <li class="breadcrumb-item active">Tous les Projets</li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    
+    
+    <div class="page-header">
+    <div class="row align-items-center">
+    <div class="col"></div>
+    <div class="col-auto">
+    <a href="#" class="invoices-links">
+    <i class="feather feather-list"></i>
+    </a>
+    <a href="#" class="invoices-links active">
+    <i class="feather feather-grid"></i>
+    </a>
+    </div>
+    </div>
+    </div>
+    
+    
+   
+    
+    <div class="card invoices-tabs-card border-0">
+    <div class="card-body card-body pt-0 pb-0">
+    <div class="invoices-main-tabs border-0 pb-0">
+    <div class="row align-items-center">
+    <div class="col-lg-12 col-md-12">
+    <div class="invoices-settings-btn invoices-settings-btn-one">
+   
+    <a href="{% url 'add_projet' %}" class="btn">
+    <i class="feather feather-plus-circle"></i> Nouveau Projet
+    </a>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+        {% for l in listpro %}
+       
+        <div class="col-sm-6 col-lg-4 col-xl-3 d-flex">
+            <div class="card invoices-grid-card w-100">
+            <div class="card-header d-flex justify-content-between align-items-center">
+            <a href="view-invoice.html" class="invoice-grid-link">{{l.Utilisateur}}</a>
+            <div class="dropdown dropdown-action">
+            <a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></a>
+            <div class="dropdown-menu dropdown-menu-end">
+                {% if l.Utilisateur == en.username %}
+                
+                {% if l.Reste == l.Montant and l.Echéance > 0 %}
+                <a class="dropdown-item" href="{% url 'mod_projet' l.id %}"><i class="far fa-edit me-2"></i>Modifier</a>
+                <a class="dropdown-item" href="{% url 'voir_projet' l.id %}"><i class="far fa-eye me-2"></i>Voir</a>
+                <a class="dropdown-item" href="{% url 'sup_projet' l.id %}"><i class="far fa-trash-alt me-2"></i>Supprimer</a>
+                
+                {% else %}
+                
+                <h2>NO</h2>
+
+
+                {% endif %}
+                
+            
+            {% else %}
+            
+            {% endif %}
+            
+            </div>
+            </div>
+            </div>
+            <div class="card-middle">
+            <h2 class="card-middle-avatar">
+            <a href="{% url 'voir_projet' l.id %}"><img class="avatar avatar-sm me-2 avatar-img rounded-circle" src="http://127.0.0.1:8000/{{l.Images.url}}" alt="User Image">{{l.Titre}}</a>
+            </h2>
+            </div>
+            <div class="card-body">
+            <div class="row align-items-center">
+            <div class="col">
+            <span><i class="far fa-money-bill-alt"></i> Montant</span>
+            <h6 class="mb-0">${{l.Montant}}</h6>
+            </div>
+            <div class="col-auto">
+            <span><i class="far fa-calendar-alt"></i>Date de fin</span>
+            <h6 class="mb-0">{{l.Date_de_fin}}</h6>
+            </div>
+            </div>
+            </div>
+            <div class="card-footer">
+            <div class="row align-items-center">
+            <div class="col-auto">
+            {% if l.Reste > 0 and l.Echéance > 0 %}
+            <span class="badge bg-success-dark">En cours</span>
+            {% else %}
+            <span class="badge bg-danger-dark">Achevé </span>
+            {% endif %}
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+
+    {% endfor %}
+
+  
+    <div class="col-lg-12">
+    <div class="invoice-load-btn">
+    <a href="#" class="btn">
+    <span class="spinner-border text-primary"></span> Voir plus
+    </a>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    </div>
+
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'assets/js/feather.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/slimscroll/jquery.slimscroll.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/datatables/datatables.min.js' %}"></script>
+
+<script src="{% static 'assets/js/script.js' %}"></script>
+</body>
+</html>

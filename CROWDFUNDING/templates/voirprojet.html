@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+<title>Projets_details</title>
+
+<link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/feather/feather.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/icons/flags/flags.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/all.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/datatables/datatables.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+<body>
+
+<div class="main-wrapper">
+
+    <div class="header">
+
+        <div class="header-left">
+            <a href="" >
+                <img style="width:180px; height: 180px;" src="{% static 'assets/img/crowlogo.png' %}" alt="Logo" >
+            </a>
+            <a href="{% url 'index' %}" class="logo logo-small">
+                <img src="{% static 'assets/img/logo-small.png' %}" alt="Logo" width="30" height="30">
+            </a>
+        </div>
+        <div class="menu-toggle">
+            <a href="javascript:void(0);" id="toggle_btn">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+
+        <div class="top-nav-search">
+            <form>
+                <input type="text" class="form-control" placeholder="Rechercher ici...">
+                <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <a class="mobile_btn" id="mobile_btn">
+            <i class="fas fa-bars"></i>
+        </a>
+
+        <ul class="nav user-menu">
+      
+
+            <li class="nav-item zoom-screen me-2">
+                <a href="#" class="nav-link header-nav-list win-maximize">
+                    <img src="{% static 'assets/img/icons/header-icon-04.svg' %}" alt="">
+                </a>
+            </li>
+
+            <li class="nav-item dropdown has-arrow new-user-menus">
+                <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                    <span class="user-img">
+                        <img class="rounded-circle" src="{{en.Photo.url}}" width="31"
+                            alt="Soeng Souy">
+                        <div class="user-text">
+                            <h6>{{en.username}} - {{en.first_name}} - {{en.last_name}}</h6>
+                            <p class="text-muted mb-0">{{en.statut}}</p>
+                        </div>
+                    </span>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="user-header">
+                        <div class="avatar avatar-sm">
+                            <img src="{{en.Photo.url}}" alt="User Image"
+                                class="avatar-img rounded-circle">
+                        </div>
+                        <div class="user-text">
+                            <h6>{{en.username}} - {{en.first_name}} - {{en.last_name}}</h6>
+                            <p class="text-muted mb-0">{{en.statut}}</p>
+                        </div>
+                    </div>
+                    <a class="dropdown-item" href="{% url 'profile' %}">Mon Profile</a>
+                   
+                    <a class="dropdown-item" href="{% url 'deconnexion'  %}">Deconnexion</a>
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+                <li class="menu-title">
+                    <span>Menu Principal</span>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="feather-grid"></i> <span>Accueil</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="{% url 'index' %}" >Details</a></li>
+                       
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-book-reader"></i> <span> Type des Projets</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="{% url 'list_type' %}"> Liste des type</a></li>
+                        <li><a href="{% url 'add_type' %}">Ajouter Type</a></li>
+                        
+                    </ul>
+                </li>
+                <li class="submenu active">
+                    <a href="#"><i class="fas fa-graduation-cap"></i> <span> Projets</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="{% url 'list_projets' %}"> Liste de projets</a></li>
+                       
+                        <li><a href="{% url 'add_projet' %}">Ajouter Projets</a></li>
+                       
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span> Utilisateurs</span> <span
+                            class="menu-arrow"></span></a>
+                            <ul>
+                                <li><a href="{% url 'list_utili' %}">Liste des Utilisateurs</a></li>
+                                <li><a href="{% url 'voir_utili' %}">Voir l'utilisateur</a></li>
+                            </ul>
+                </li>
+                
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-building"></i> <span> Contributions</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="{% url 'contributions' %}">Liste des contributions</a></li>
+                        <li><a href="add-department.html">Nouvelle contributions</a></li>
+                       
+                    </ul>
+                </li>
+      
+              
+              
+               
+                
+    
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-shield-alt"></i> <span> Authentification </span> <span
+                            class="menu-arrow"></span></a>
+                            <ul>
+                                <li><a href="{% url 'login' %}">Login</a></li>
+                                <li><a href="{% url 'registe' %}">Nouveau compte</a></li>
+                                <li><a href="{% url 'oublie' %}">Mot de passe oublié</a></li>
+                                
+                            </ul>
+                </li>
+              
+               
+               
+                
+               
+                
+               
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="page-wrapper">
+<div class="content container-fluid">
+<div class="page-header">
+<div class="row">
+<div class="col-sm-12">
+<div class="page-sub-header">
+<h3 class="page-title">Détails du Projet</h3>
+<ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="{% url 'list_projets' %}">Projets</a></li>
+<li class="breadcrumb-item active">Détails du Projets</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-body">
+<div class="row">
+<div class="col-md-12">
+<div class="about-info">
+<h4>{{vprojet.Titre}} <span><a href="javascript:;"><i class="feather-more-vertical"></i></a></span></h4>
+</div>
+<div class="student-profile-head">
+<div class="profile-bg-img">
+<img src="http://127.0.0.1:8000/{{vprojet.Images.url}}" alt="Profile">
+</div>
+<div class="row">
+<div class="col-lg-4 col-md-4">
+<div class="profile-user-box">
+<div class="profile-user-img">
+<img src="http://127.0.0.1:8000/{{vutil.Photo.url}}" alt="Profile">
+<div class="form-group students-up-files profile-edit-icon mb-0">
+<div class="uplod d-flex">
+<label class="file-upload profile-upbtn mb-0">
+<i class="feather-edit-3"></i><input type="file">
+</label>
+</div>
+</div>
+</div>
+<div class="names-profiles">
+<h4>{{vutil}}</h4>
+<h5>{{vutil.statut}}</h5>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-4 d-flex align-items-center">
+<div class="follow-group">
+<div class="students-follows">
+<h5>Cout</h5>
+<h4>{{vprojet.Montant}}$</h4>
+<br> <br>
+<h5>Echéance</h5>
+<h4>{{vprojet.Echéance}}</h4>
+</div>
+<div class="students-follows">
+<h5>Montant contribué</h5>
+<h4>{{vprojet.Contribution}}$</h4>
+<br>
+<h5>Contributions</h5>
+<h4>0</h4>
+</div>
+
+<div class="students-follows">
+<h5>Reste </h5>
+<h4>{{vprojet.Reste}}$</h4>
+<h5>Etat </h5>
+{% if vprojet.Echéance == 0 or vprojet.Contribution == vprojet.Montant or vprojet.Echéance < 0  %}
+<h4 style="color: red;">Achevé...</h4>
+{% else %}
+<h4 style="color: green;">En cours...</h4>
+{% endif %}
+
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-4 d-flex align-items-center">
+<div class="follow-btn-group">
+
+<button hidden type="submit" class="btn btn-info follow-btns">Proposer</button>
+
+{% if vprojet.Echéance == 0 or vprojet.Contribution == vprojet.Montant or vprojet.Echéance < 0  %}
+<button type="submit" data-bs-toggle="modal" data-bs-target="#signup-modal1" class="btn btn-info follow-btns">Contribuer</button>
+{% else %}
+<button type="submit" data-bs-toggle="modal" data-bs-target="#signup-modal" class="btn btn-info follow-btns">Contribuer</button>
+{% endif %}
+
+
+<div id="signup-modal1" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-body">
+    <div class="text-center mt-2 mb-4">
+    <div class="auth-logo">
+    <a href="index.html" class="logo logo-dark">
+    <span class="logo-lg">
+    <img src="{% static 'assets/img/logo.png' %}" alt="" height="42">
+    </span>
+    </a>
+    </div>
+    </div>
+        <h4 style="color: red; text-align: center;">
+            vous ne pouvez plus contribuer à ce projet car il est dèja Achevé
+        </h4>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+
+
+
+<div id="signup-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-body">
+    <div class="text-center mt-2 mb-4">
+    <div class="auth-logo">
+    <a href="index.html" class="logo logo-dark">
+    <span class="logo-lg">
+    <img src="{% static 'assets/img/logo.png' %}" alt="" height="42">
+    </span>
+    </a>
+    </div>
+    </div>
+        <form class="px-3" action="{% url 'add_contributions' %}" method="post">
+            {% csrf_token %}
+            <div hidden class="mb-3">
+            <label for="username" class="form-label">Projet</label>
+            <input class="form-control" readonly type="text" name="projet" hidden  required="" placeholder="" value="{{vprojet.Titre}}">
+            </div>
+            
+            <div class="mb-3">
+                <label for="username" class="form-label">Type de contribution</label>
+                <select class="form-control" name="type" id="">
+                    <option value="DON">DON</option>   
+                    <option value="PRET">PRET</option>   
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="emailaddress" class="form-label">Montant</label>
+                <input class="form-control" name="montant" type="number" required >
+            </div>
+           
+            <div class="mb-3">
+            <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="customCheck1">
+            <label class="form-check-label" for="customCheck1">NB :<a href="#">La contribution ne peut modifier ou annuler</a></label>
+            </div>
+            </div>
+            <div class="mb-3 text-center">
+            <button class="btn btn-primary" type="submit">Contribuer</button>
+            
+            </div>
+        </form>
+       
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-4">
+<div class="student-personals-grp">
+<div class="card">
+<div class="card-body">
+<div class="heading-detail">
+<h4>Infomation de l'initiateur du projet :</h4>
+</div>
+<div class="personal-activity">
+<div class="personal-icons">
+<i class="feather-user"></i>
+</div>
+<div class="views-personal">
+<h4>Nom</h4>
+<h5>{{vutil.username}}-{{vutil.last_name}}</h5>
+</div>
+</div>
+<div class="personal-activity">
+<div class="personal-icons">
+<img src="assets/img/icons/buliding-icon.svg" alt="">
+</div>
+<div class="views-personal">
+<h4>Fonction </h4>
+<h5>{{vutil.statut}}</h5>
+</div>
+</div>
+<div class="personal-activity">
+<div class="personal-icons">
+<i class="feather-phone-call"></i>
+</div>
+<div class="views-personal">
+<h4>Mail:</h4>
+<h5>{{vutil.email}}</h5>
+</div>
+</div>
+<div class="personal-activity">
+<div class="personal-icons">
+<i class="feather-mail"></i>
+</div>
+<div class="views-personal">
+<h4>Email</h4>
+<h5><a href="" class="__cf_email__" data-cfemail="81e5e0e8f2f8c1e6ece0e8edafe2eeec">[{{vutil.email}}]</a></h5>
+</div>
+</div>
+<div class="personal-activity">
+<div class="personal-icons">
+
+</div>
+<div hidden class="views-personal">
+<h4 hidden>Genre</h4>
+<h5 hidden>Masculin</h5>
+</div>
+</div>
+<div class="personal-activity">
+<div class="personal-icons">
+<i class="feather-calendar"></i>
+</div>
+<div class="views-personal">
+<h4>Date d'inscription</h4>
+<h5>{{vutil.Dates}}</h5>
+</div>
+</div>
+<div class="personal-activity">
+<div class="personal-icons">
+
+</div>
+</div>
+<div class="personal-activity mb-0">
+<div class="personal-icons">
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="student-personals-grp">
+<div class="card mb-0">
+<div class="card-body">
+
+<div class="skill-blk">
+<div class="skill-statistics">
+<div class="skills-head">
+
+</div>
+<div class="progress mb-0">
+<div class="progress-bar bg-photoshop" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="skill-statistics">
+<div class="skills-head">
+
+</div>
+<div class="progress mb-0">
+<div class="progress-bar bg-editor" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="skill-statistics mb-0">
+<div class="skills-head">
+
+</div>
+<div class="progress mb-0">
+<div class="progress-bar bg-illustrator" role="progressbar" style="width: {{vprojet.Contribution}}%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="{{vprojet.Montant}}"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-8">
+<div class="student-personals-grp">
+<div class="card mb-0">
+<div class="card-body">
+<div class="heading-detail">
+<h4>A propos du projet</h4>
+</div>
+<div class="hello-park">
+<h5>la collecte pour ce projet commence apartir du {{vprojet.Date_du_début}} et se termine le {{vprojet.Date_de_fin}}</h5>
+
+<p>{{vprojet.Description}} </p>
+</div>
+<div class="hello-park">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<footer>
+<p>Copyright © 2022 Dreamguys.</p>
+</footer>
+
+</div>
+
+</div>
+
+
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'assets/js/feather.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/slimscroll/jquery.slimscroll.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/datatables/datatables.min.js' %}"></script>
+
+<script src="{% static 'assets/js/script.js' %}"></script>
+</body>
+</html>

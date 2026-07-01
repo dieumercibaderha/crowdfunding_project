@@ -1,0 +1,14 @@
+
+
+{% autoescape off %}
+Bounjour, nous tenons à vous informé que {{name}}, vient de créer un projet
+denomé {{projet}}.
+celui-ci est un projet pour {{desc}} 
+
+
+Pour plus de details sur {{projet}}, veuillez cliquer sur ce lien:
+    https//{{domain}}{% url 'voir_projet' id   %}
+
+{% endautoescape %} 
+
+

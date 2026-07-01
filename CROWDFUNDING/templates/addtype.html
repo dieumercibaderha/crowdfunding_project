@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>AJout_Type_Projet</title>
+
+    <link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/plugins/feather/feather.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/plugins/icons/flags/flags.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/all.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/plugins/datatables/datatables.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+<body>
+
+<div class="main-wrapper">
+
+    <div class="header">
+
+        <div class="header-left">
+            <a href="" >
+                <img style="width:180px; height: 180px;" src="{% static 'assets/img/crowlogo.png' %}" alt="Logo" >
+            </a>
+            <a href="{% url 'index' %}" class="logo logo-small">
+                <img src="{% static 'assets/img/logo-small.png' %}" alt="Logo" width="30" height="30">
+            </a>
+        </div>
+        <div class="menu-toggle">
+            <a href="javascript:void(0);" id="toggle_btn">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+
+        <div class="top-nav-search">
+            <form>
+                <input type="text" class="form-control" placeholder="Rechercher ici...">
+                <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <a class="mobile_btn" id="mobile_btn">
+            <i class="fas fa-bars"></i>
+        </a>
+
+        <ul class="nav user-menu">
+      
+
+            <li class="nav-item zoom-screen me-2">
+                <a href="#" class="nav-link header-nav-list win-maximize">
+                    <img src="{% static 'assets/img/icons/header-icon-04.svg' %}" alt="">
+                </a>
+            </li>
+
+            <li class="nav-item dropdown has-arrow new-user-menus">
+                <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                    <span class="user-img">
+                        <img class="rounded-circle" src="{{en.Photo.url}}" width="31"
+                            alt="Soeng Souy">
+                        <div class="user-text">
+                            <h6>{{en.username}} - {{en.first_name}} - {{en.last_name}}</h6>
+                            <p class="text-muted mb-0">{{en.statut}}</p>
+                        </div>
+                    </span>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="user-header">
+                        <div class="avatar avatar-sm">
+                            <img src="{{en.Photo.url}}" alt="User Image"
+                                class="avatar-img rounded-circle">
+                        </div>
+                        <div class="user-text">
+                            <h6>{{en.username}} - {{en.first_name}} - {{en.last_name}}</h6>
+                            <p class="text-muted mb-0">{{en.statut}}</p>
+                        </div>
+                    </div>
+                    <a class="dropdown-item" href="{% url 'profile' %}">Mon Profile</a>
+                   
+                    <a class="dropdown-item" href="{% url 'deconnexion'  %}">Deconnexion</a>
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+                <li class="menu-title">
+                    <span>Menu Principal</span>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="feather-grid"></i> <span>Accueil</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="{% url 'index' %}" >Details</a></li>
+                       
+                    </ul>
+                </li>
+                <li class="submenu active">
+                    <a href="#"><i class="fas fa-book-reader"></i> <span> Type des Projets</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="{% url 'list_type' %}"> Liste des type</a></li>
+                        <li><a href="{% url 'add_type' %}" class="active">Ajouter Type</a></li>
+                       
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-graduation-cap"></i> <span> Projets</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="{% url 'list_projets' %}"  > Liste de projets</a></li>
+                        
+                        <li><a href="{% url 'add_projet' %}">Ajouter Projets</a></li>
+                      
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span> Utilisateurs</span> <span
+                            class="menu-arrow"></span></a>
+                            <ul>
+                                <li><a href="{% url 'list_utili' %}" >Liste des Utilisateurs</a></li>
+                               
+                            </ul>
+                </li>
+              
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-building"></i> <span> Contributions</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="{% url 'contributions' %}">Liste des contributions</a></li>
+                       
+                    </ul>
+                </li>
+               
+              
+              
+              
+               
+                
+    
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-shield-alt"></i> <span> Authentification </span> <span
+                            class="menu-arrow"></span></a>
+                            <ul>
+                                <li><a href="{% url 'login' %}">Login</a></li>
+                                <li><a href="{% url 'registe' %}">Nouveau compte</a></li>
+                                <li><a href="{% url 'oublie' %}">Mot de passe oublié</a></li>
+                                
+                            </ul>
+                </li>
+              
+               
+               
+                
+               
+                
+               
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="page-wrapper">
+<div class="content container-fluid">
+
+<div class="page-header">
+<div class="row align-items-center">
+<div class="col-sm-12">
+<div class="page-sub-header">
+<h3 class="page-title">Nouveau Type</h3>
+<ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="{% url 'list_type' %}">Types</a></li>
+<li class="breadcrumb-item active">Nouveau Type</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-sm-12">
+<div class="card comman-shadow">
+<div class="card-body">
+<form method="post" enctype="multipart/form-data" action="{% url 'add_type' %}">
+    {% csrf_token %}
+            <div class="row">
+            <div class="col-12">
+            <h5 class="form-title student-info">Detail du type <span><a href="javascript:;"><i class="feather-more-vertical"></i></a></span></h5>
+            </div>
+                <div class="col-12 col-sm-4">
+                    <div class="form-group local-forms">
+                        <label>Type<span class="login-danger">*</span></label>
+                        <input name="types" class="form-control" type="text" placeholder="Entrer le type de Projet">
+                    </div>
+                </div>
+
+            <div class="col-12 col-sm-4">
+                <div class="form-group local-forms">
+                    <label>Description  <span class="login-danger">*</span></label>
+                    <input name="desc" class="form-control" type="text" placeholder="Entrer la Description">
+                </div>
+            </div>
+
+
+            <div class="col-12 col-sm-4">
+            <div class="form-group students-up-files">
+            <label>Choisissez l'image descriptive </label>
+            <div class="uplod">
+                <label class="file-upload image-upbtn mb-0">
+                Choose File <input name="images" type="file">
+                </label>
+            </div>
+            </div>
+            </div>
+            <div class="col-12">
+            <div class="student-submit">
+                <button type="submit" class="btn btn-primary">Ajouter</button>
+            </div>
+            </div>
+            </div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'assets/js/feather.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/slimscroll/jquery.slimscroll.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/select2/js/select2.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/moment/moment.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap-datetimepicker.min.js' %}"></script>
+
+<script src="{% static 'assets/js/script.js' %}"></script>
+</body>
+</html>

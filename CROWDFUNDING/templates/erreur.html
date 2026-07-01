@@ -1,0 +1,15 @@
+
+
+{% autoescape off %}
+Ceci est une confirmation pour la création de votre compte
+
+ Felicitaions {{name}}!! 
+
+
+Confirmé cette addresse en cliquant sur le lien suivant
+
+    https//{{domain}}{% url 'activate' uidb64=uid token=token  %}
+
+{% endautoescape %} 
+
+

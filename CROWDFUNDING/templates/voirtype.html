@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+<title>Projets_details</title>
+
+<link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/feather/feather.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/icons/flags/flags.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/all.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/datatables/datatables.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+<body>
+
+<div class="main-wrapper">
+
+    <div class="header">
+
+        <div class="header-left">
+            <a href="" class="logo">
+                <img src="{% static 'assets/img/logo.png' %}" alt="Logo">
+            </a>
+            <a href="{% url 'index' %}" class="logo logo-small">
+                <img src="{% static 'assets/img/logo-small.png' %}" alt="Logo" width="30" height="30">
+            </a>
+        </div>
+        <div class="menu-toggle">
+            <a href="javascript:void(0);" id="toggle_btn">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+
+        <div class="top-nav-search">
+            <form>
+                <input type="text" class="form-control" placeholder="Rechercher ici...">
+                <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <a class="mobile_btn" id="mobile_btn">
+            <i class="fas fa-bars"></i>
+        </a>
+
+        <ul class="nav user-menu">
+            <li class="nav-item dropdown noti-dropdown language-drop me-2">
+                <a href="#" class="dropdown-toggle nav-link header-nav-list" data-bs-toggle="dropdown">
+                    <img src="{% static 'assets/img/icons/header-icon-01.svg' %}" alt="">
+                </a>
+                <div class="dropdown-menu ">
+                    <div class="noti-content">
+                        <div>
+                            <a class="dropdown-item" href="javascript:;"><i
+                                    class="flag flag-lr me-2"></i>Anglais</a>
+                            <a class="dropdown-item" href="javascript:;"><i
+                                    class="flag flag-bl me-2"></i>Francais</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown noti-dropdown me-2">
+                <a href="#" class="dropdown-toggle nav-link header-nav-list" data-bs-toggle="dropdown">
+                    <img src="{% static 'assets/img/icons/header-icon-05.svg' %}" alt="">
+                </a>
+                <div class="dropdown-menu notifications">
+                    <div class="topnav-dropdown-header">
+                        <span class="notification-title">Notifications</span>
+                        <a href="{% static 'javascript:void(0)' %}" class="clear-noti"> Clear All </a>
+                    </div>
+                    <div class="noti-content">
+                        <ul class="notification-list">
+                            <li class="notification-message">
+                                <a href="#">
+                                    <div class="media d-flex">
+                                        <span class="avatar avatar-sm flex-shrink-0">
+                                            <img class="avatar-img rounded-circle" alt="User Image"
+                                                src="{% static 'assets/img/profiles/avatar-02.jpg' %}">
+                                        </span>
+                                        <div class="media-body flex-grow-1">
+                                            <p class="noti-details"><span class="noti-title">Carlson Tech</span> has
+                                                approved <span class="noti-title">your estimate</span></p>
+                                            <p class="noti-time"><span class="notification-time">4 mins ago</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-message">
+                                <a href="#">
+                                    <div class="media d-flex">
+                                        <span class="avatar avatar-sm flex-shrink-0">
+                                            <img class="avatar-img rounded-circle" alt="User Image"
+                                                src="{% static 'assets/img/profiles/avatar-11.jpg' %}">
+                                        </span>
+                                        <div class="media-body flex-grow-1">
+                                            <p class="noti-details"><span class="noti-title">International Software
+                                                    Inc</span> has sent you a invoice in the amount of <span
+                                                    class="noti-title">$218</span></p>
+                                            <p class="noti-time"><span class="notification-time">6 mins ago</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-message">
+                                <a href="#">
+                                    <div class="media d-flex">
+                                        <span class="avatar avatar-sm flex-shrink-0">
+                                            <img class="avatar-img rounded-circle" alt="User Image"
+                                                src="{% static 'assets/img/profiles/avatar-17.jpg' %}">
+                                        </span>
+                                        <div class="media-body flex-grow-1">
+                                            <p class="noti-details"><span class="noti-title">John Hendry</span> sent
+                                                a cancellation request <span class="noti-title">Apple iPhone
+                                                    XR</span></p>
+                                            <p class="noti-time"><span class="notification-time">8 mins ago</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-message">
+                                <a href="#">
+                                    <div class="media d-flex">
+                                        <span class="avatar avatar-sm flex-shrink-0">
+                                            <img class="avatar-img rounded-circle" alt="User Image"
+                                                src="{% static 'assets/img/profiles/avatar-13.jpg' %}">
+                                        </span>
+                                        <div class="media-body flex-grow-1">
+                                            <p class="noti-details"><span class="noti-title">Mercury Software
+                                                    Inc</span> added a new product <span class="noti-title">Apple
+                                                    MacBook Pro</span></p>
+                                            <p class="noti-time"><span class="notification-time">12 mins ago</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="topnav-dropdown-footer">
+                        <a href="#">Voir toutes les notifications</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item zoom-screen me-2">
+                <a href="#" class="nav-link header-nav-list win-maximize">
+                    <img src="{% static 'assets/img/icons/header-icon-04.svg' %}" alt="">
+                </a>
+            </li>
+
+            <li class="nav-item dropdown has-arrow new-user-menus">
+                <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                    <span class="user-img">
+                        <img class="rounded-circle" src="{% static 'assets/img/profiles/avatar-01.jpg' %}" width="31"
+                            alt="Soeng Souy">
+                        <div class="user-text">
+                            <h6>Dieumerci Mahamuli</h6>
+                            <p class="text-muted mb-0">Administrator</p>
+                        </div>
+                    </span>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="user-header">
+                        <div class="avatar avatar-sm">
+                            <img src="{% static 'assets/img/profiles/avatar-01.jpg' %}" alt="User Image"
+                                class="avatar-img rounded-circle">
+                        </div>
+                        <div class="user-text">
+                            <h6>Dieumerci Mahamuli</h6>
+                            <p class="text-muted mb-0">Administrator</p>
+                        </div>
+                    </div>
+                    <a class="dropdown-item" href="profile.html">Mon Profile</a>
+                   
+                    <a class="dropdown-item" href="login.html">Deconnexion</a>
+                </div>
+            </li>
+
+        </ul>
+
+</div>
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+                <li class="menu-title">
+                    <span>Menu Principal</span>
+                </li>
+                <li class="submenu active">
+                    <a href="#"><i class="feather-grid"></i> <span>Accueil</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="{% url 'index' %}" >Details</a></li>
+                       
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-graduation-cap"></i> <span> Projets</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="{% url 'list_projets' %}"> Liste de projets</a></li>
+                        <li><a href="{% url 'voir_projet' %}" class="active">Voir Projets</a></li>
+                        <li><a href="{% url 'add_projet' %}">Ajouter Projets</a></li>
+                       
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span> Utilisateurs</span> <span
+                            class="menu-arrow"></span></a>
+                            <ul>
+                                <li><a href="{% url 'list_utili' %}">Liste des Utilisateurs</a></li>
+                                <li><a href="{% url 'voir_utili' %}">Voir l'utilisateur</a></li>
+                               
+                                <li><a href="{% url 'mod_utili' %}">Modifier L'utilisateur</a></li>
+                            </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-building"></i> <span> Contributions</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="departments.html">Liste des contributions</a></li>
+                        <li><a href="add-department.html">Nouvelle contributions</a></li>
+                        <li><a href="edit-department.html">Editer la contributions</a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-book-reader"></i> <span> Subjects</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="subjects.html">Subject List</a></li>
+                        <li><a href="add-subject.html">Subject Add</a></li>
+                        <li><a href="edit-subject.html">Subject Edit</a></li>
+                    </ul>
+                </li>
+              
+              
+               
+                
+    
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-shield-alt"></i> <span> Authentification </span> <span
+                            class="menu-arrow"></span></a>
+                            <ul>
+                                <li><a href="{% url 'login' %}">Login</a></li>
+                                <li><a href="{% url 'registe' %}">Nouveau compte</a></li>
+                                <li><a href="{% url 'oublie' %}">Mot de passe oublié</a></li>
+                                
+                            </ul>
+                </li>
+              
+               
+               
+                
+               
+                
+               
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="page-wrapper">
+<div class="content container-fluid">
+<div class="page-header">
+<div class="row">
+<div class="col-sm-12">
+<div class="page-sub-header">
+<h3 class="page-title">Détails du Projet</h3>
+<ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="students.html">Détails</a></li>
+<li class="breadcrumb-item active">Détails du Projets</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-body">
+<div class="row">
+<div class="col-md-12">
+<div class="about-info">
+<h4>Profile <span><a href="javascript:;"><i class="feather-more-vertical"></i></a></span></h4>
+</div>
+<div class="student-profile-head">
+<div class="profile-bg-img">
+<img src="{% static 'assets/img/profile-bg.jpg' %}" alt="Profile">
+</div>
+<div class="row">
+<div class="col-lg-4 col-md-4">
+<div class="profile-user-box">
+<div class="profile-user-img">
+<img src="{% static 'assets/img/profile-user.jpg' %}" alt="Profile">
+<div class="form-group students-up-files profile-edit-icon mb-0">
+<div class="uplod d-flex">
+<label class="file-upload profile-upbtn mb-0">
+<i class="feather-edit-3"></i><input type="file">
+</label>
+</div>
+</div>
+</div>
+<div class="names-profiles">
+<h4>Initiateur du Projet</h4>
+<h5>Computer Science</h5>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-4 d-flex align-items-center">
+<div class="follow-group">
+<div class="students-follows">
+<h5>Montant</h5>
+<h4>2850</h4>
+</div>
+<div class="students-follows">
+<h5>Montant contribué</h5>
+<h4>2850</h4>
+</div>
+<div class="students-follows">
+<h5>Reste </h5>
+<h4>2850</h4>
+<h5>Etat </h5>
+<h4 style="color: red;">En cours...</h4>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-4 d-flex align-items-center">
+<div class="follow-btn-group">
+<button type="submit" class="btn btn-info follow-btns">Contribuer</button>
+<button type="submit" class="btn btn-info follow-btns">Proposer</button>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-4">
+<div class="student-personals-grp">
+<div class="card">
+<div class="card-body">
+<div class="heading-detail">
+<h4>Infomation de l'initiateur :</h4>
+</div>
+<div class="personal-activity">
+<div class="personal-icons">
+<i class="feather-user"></i>
+</div>
+<div class="views-personal">
+<h4>Nom</h4>
+<h5>BADERHA MAHAMULI</h5>
+</div>
+</div>
+<div class="personal-activity">
+<div class="personal-icons">
+<img src="assets/img/icons/buliding-icon.svg" alt="">
+</div>
+<div class="views-personal">
+<h4>Fonction </h4>
+<h5>Administrateur</h5>
+</div>
+</div>
+<div class="personal-activity">
+<div class="personal-icons">
+<i class="feather-phone-call"></i>
+</div>
+<div class="views-personal">
+<h4>Num Tél:</h4>
+<h5>+91 89657 48512</h5>
+</div>
+</div>
+<div class="personal-activity">
+<div class="personal-icons">
+<i class="feather-mail"></i>
+</div>
+<div class="views-personal">
+<h4>Email</h4>
+<h5><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="81e5e0e8f2f8c1e6ece0e8edafe2eeec">[email&#160;protected]</a></h5>
+</div>
+</div>
+<div class="personal-activity">
+<div class="personal-icons">
+<i class="feather-user"></i>
+</div>
+<div class="views-personal">
+<h4>Genre</h4>
+<h5>Masculin</h5>
+</div>
+</div>
+<div class="personal-activity">
+<div class="personal-icons">
+<i class="feather-calendar"></i>
+</div>
+<div class="views-personal">
+<h4>Date d'inscription</h4>
+<h5>22 Apr 1995</h5>
+</div>
+</div>
+<div class="personal-activity">
+<div class="personal-icons">
+<i class="feather-italic"></i>
+</div>
+</div>
+<div class="personal-activity mb-0">
+<div class="personal-icons">
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="student-personals-grp">
+<div class="card mb-0">
+<div class="card-body">
+
+<div class="skill-blk">
+<div class="skill-statistics">
+<div class="skills-head">
+
+</div>
+<div class="progress mb-0">
+<div class="progress-bar bg-photoshop" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="skill-statistics">
+<div class="skills-head">
+
+</div>
+<div class="progress mb-0">
+<div class="progress-bar bg-editor" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+<div class="skill-statistics mb-0">
+<div class="skills-head">
+
+</div>
+<div class="progress mb-0">
+<div class="progress-bar bg-illustrator" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-8">
+<div class="student-personals-grp">
+<div class="card mb-0">
+<div class="card-body">
+<div class="heading-detail">
+<h4>A propos du projet</h4>
+</div>
+<div class="hello-park">
+<h5>Hello I am Daisy Parks</h5>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur officia deserunt mollit anim id est laborum.</p>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
+</div>
+<div class="hello-park">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<footer>
+<p>Copyright © 2022 Dreamguys.</p>
+</footer>
+
+</div>
+
+</div>
+
+
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'assets/js/feather.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/slimscroll/jquery.slimscroll.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/datatables/datatables.min.js' %}"></script>
+
+<script src="{% static 'assets/js/script.js' %}"></script>
+</body>
+</html>

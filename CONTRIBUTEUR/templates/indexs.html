@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <title>Crowdfunding-Contributeurs</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'  %}" rel="stylesheet">
+
+<!--
+
+TemplateMo 570 Chain App Dev
+
+https://templatemo.com/tm-570-chain-app-dev
+
+-->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-chain-app-dev.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animated.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="" >
+              <img style="width:180px; height: 180px;" src="{% static 'assets/img/crowlogo.png' %}" alt="Logo" >
+          </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="#top" class="active">Accueil</a></li>
+              <li class="scroll-to-section"><a href="#services">Apropos</a></li>
+              <li class="scroll-to-section"><a href="#pricing">Projets</a></li>
+              <li class="scroll-to-section"><a href="#newsletter">Contacter</a></li>
+              <li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i>connectez-vous</a></div></li> 
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+  
+  <div id="modal" class="popupContainer" style="display:none;">
+    <div class="popupHeader">
+        <span class="header_title">Connexion</span>
+        <span class="modal_close"><i class="fa fa-times"></i></span>
+    </div>
+
+    <section class="popupBody">
+        <!-- Social Login -->
+        <div class="social_login">
+            
+
+          
+
+            <div class="action_btns">
+               <center>
+                <div class="one_half last"><a href="{% url 'deconnexion' %}" class="btn">deconnexion</a></div>
+               </center>
+
+            </div>
+        </div>
+
+        <!-- Username & Password Login form -->
+        
+    </section>
+  </div>
+
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h2>Bienvenue dans crowdfunding</h2>
+                    <p>Pour l'accompagnement dans la collecte et le financement des vos projets innovants</p>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="white-button first-button scroll-to-section">
+                      <a href="#contact">100% gratuit <i class="fab fa-apple"></i></a>
+                    </div>
+                    <div class="white-button scroll-to-section">
+                      <a href="#contact">100% gratuit <i class="fab fa-apple"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="{% static 'login.png' %}" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="services" class="services section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h4>Apropos de <em>Crowdfunding </em></h4>
+            <img src="{% static 'assets/images/heading-line-dec.png' %}" alt="">
+            <p style="color: black; text-align: justify;"> 
+              
+              Bienvenue sur Crowdfunding, votre destination de choix pour le financement participatif. Fondée en 2024, notre mission est de connecter les créateurs, les entrepreneurs et les innovateurs avec des personnes passionnées prêtes à soutenir leurs projets.
+              Nous croyons en un monde où chaque idée mérite une chance de se réaliser. Que vous soyez un artiste, un inventeur, ou un entrepreneur social, Crowdfunding est là pour vous aider à transformer vos rêves en réalité.
+   
+              <br>
+              
+              <h5>Comment ça marche ?</h5>
+              <ol style="text-align: justify; color: black;">
+                <li>Créez votre projet : Décrivez votre idée, fixez un objectif de financement et lancez votre campagne.</li> <br>
+                <li>Partagez votre campagne** : Utilisez les réseaux sociaux et autres canaux pour attirer des contributeurs.</li> <br>
+                <li>Recevez des fonds** : Une fois votre objectif atteint, utilisez les fonds pour réaliser votre projet.</li> <br>
+              </ol>
+            
+              
+              
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+   
+ 
+       
+      </div>
+    </div>
+  </div>
+
+ 
+ 
+  <div id="pricing" class="pricing-tables">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>Liste des projets recents</h4>
+            <img src="{% static 'assets/images/heading-line-dec.png' %}" alt="">
+
+          </div>
+        </div>
+        
+        {% for l in listpro %}
+
+        
+        {% if l.Reste > 0 and l.Echéance > 0 %}
+        <div class="col-lg-4">
+          <div class="pricing-item-pro">
+            <span class="price">${{l.Montant}}</span>
+            <h4>{{l.Titre}}</h4>
+            <div class="icon">
+              <img src="http://127.0.0.1:8000/{{l.Images.url}}" alt="">
+            </div>
+            <ul>
+              <li>{{l.Utilisateur}}</li>
+              <li>{{l.Type}}</li>
+             
+            </ul>
+            <div class="border-button">
+              <a href="{% url 'details' l.id %}">Voir plus de détails</a>
+            </div>
+          </div>
+          <br> <br>
+        </div> 
+          
+        {% endif %}
+          
+
+        
+          
+        {% endfor %}
+          
+       
+      </div>
+    </div>
+  </div> 
+
+  <footer id="newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>Contacter l'Administrateur ici</h4>
+          </div>
+        </div>
+        <div class="col-lg-6 offset-lg-3">
+          <form id="search" action="{% url 'envoyer'  %}" method="post">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  <textarea name="mess" class="form-control" placeholder="Message..." autocomplete="on" required></textarea>
+                
+                </fieldset>
+              </div>
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  <button type="submit" class="main-button">Enovoyer <i class="fa fa-angle-right"></i></button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Nos contacts</h4>
+            <p>Goma, RDC</p>
+            <p><a href="#">+243997857477</a></p>
+            <p><a href="#">projettutore404@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Menu</h4>
+            <ul>
+              <li><a href="#">Accueil</a></li>
+              <li><a href="#services">Apropos</a></li>
+            
+             
+              <li><a href="#pricing">Projets</a></li>
+            </ul>
+            <ul>
+              
+              <li><a href="#newsletter">Contacter</a></li>
+           
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Apropos de notre Plateforme</h4>
+            <div class="logo">
+              <img src="assets/images/white-logo.png" alt="">
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="copyright-text">
+            <p>Crowdfunding @ tout droit reservé
+          <br>conçu: <a href="" target="_blank" title="css templates">Crowdfunding</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/js/owl-carousel.js'  %}"></script>
+  <script src="{% static 'assets/js/animation.js' %}"></script>
+  <script src="{% static 'assets/js/imagesloaded.js' %}"></script>
+  <script src="{% static 'assets/js/popup.js' %}"></script>
+  <script src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+</html>

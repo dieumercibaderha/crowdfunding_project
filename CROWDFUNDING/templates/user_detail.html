@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+<title> User Details</title>
+
+<link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/feather/feather.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/icons/flags/flags.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/all.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="main-wrapper">
+
+    <div class="header">
+
+        <div class="header-left">
+            <a href="" class="logo">
+                <img src="{% static 'assets/img/logo.png' %}" alt="Logo">
+            </a>
+            <a href="{% url 'index' %}" class="logo logo-small">
+                <img src="{% static 'assets/img/logo-small.png' %}" alt="Logo" width="30" height="30">
+            </a>
+        </div>
+        <div class="menu-toggle">
+            <a href="javascript:void(0);" id="toggle_btn">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+
+        <div class="top-nav-search">
+            <form>
+                <input type="text" class="form-control" placeholder="Rechercher ici...">
+                <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <a class="mobile_btn" id="mobile_btn">
+            <i class="fas fa-bars"></i>
+        </a>
+
+        <ul class="nav user-menu">
+      
+
+            <li class="nav-item zoom-screen me-2">
+                <a href="#" class="nav-link header-nav-list win-maximize">
+                    <img src="{% static 'assets/img/icons/header-icon-04.svg' %}" alt="">
+                </a>
+            </li>
+
+            <li class="nav-item dropdown has-arrow new-user-menus">
+                <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                    <span class="user-img">
+                        <img class="rounded-circle" src="{{en.Photo.url}}" width="31"
+                            alt="Soeng Souy">
+                        <div class="user-text">
+                            <h6>{{en.username}} - {{en.first_name}} - {{en.last_name}}</h6>
+                            <p class="text-muted mb-0">Administrator</p>
+                        </div>
+                    </span>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="user-header">
+                        <div class="avatar avatar-sm">
+                            <img src="{{en.Photo.url}}" alt="User Image"
+                                class="avatar-img rounded-circle">
+                        </div>
+                        <div class="user-text">
+                            <h6>{{en.username}} - {{en.first_name}} - {{en.last_name}}</h6>
+                            <p class="text-muted mb-0">Administrator</p>
+                        </div>
+                    </div>
+                    <a class="dropdown-item" href="{% url 'profile' %}">Mon Profile</a>
+                   
+                    <a class="dropdown-item" href="{% url 'deconnexion'  %}">Deconnexion</a>
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-inner slimscroll">
+            <div id="sidebar-menu" class="sidebar-menu">
+                <ul>
+                    <li class="menu-title">
+                        <span>Menu Principal</span>
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="feather-grid"></i> <span>Accueil</span> <span
+                                class="menu-arrow"></span></a>
+                        <ul>
+                            <li><a href="{% url 'index' %}" >Details</a></li>
+                           
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-book-reader"></i> <span> Type des Projets</span> <span
+                                class="menu-arrow"></span></a>
+                        <ul>
+                            <li><a href="{% url 'list_type' %}"> Liste des type</a></li>
+                            <li><a href="{% url 'add_type' %}">Ajouter Type</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-graduation-cap"></i> <span> Projets</span> <span
+                                class="menu-arrow"></span></a>
+                        <ul>
+                            <li><a href="{% url 'list_projets' %}"> Liste de projets</a></li>
+                          
+                            <li><a href="{% url 'add_projet' %}">Ajouter Projets</a></li>
+                           
+                        </ul>
+                    </li>
+                    <li class="submenu active">
+                        <a href="#"><i class="fas fa-chalkboard-teacher "></i> <span> Utilisateurs</span> <span
+                                class="menu-arrow"></span></a>
+                                <ul>
+                                    <li><a href="{% url 'list_utili' %}" >Liste des Utilisateurs</a></li>
+                                   
+                                </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-building"></i> <span>Type de Contributions</span> <span
+                                class="menu-arrow"></span></a>
+                        <ul>
+                            <li><a href="{% url 'list_type_con' %}">Liste</a></li>
+                            <li><a href="{% url 'add_type_con' %}">Nouvel type</a></li>
+                           
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-building"></i> <span> Contributions</span> <span
+                                class="menu-arrow"></span></a>
+                        <ul>
+                            <li><a href="{% url 'contributions' %}">Liste des contributions</a></li>
+                           
+                        </ul>
+                    </li>
+                  
+                  
+                   
+                    
+        
+                    <li class="submenu">
+                        <a href="#"><i class="fas fa-shield-alt"></i> <span> Authentification </span> <span
+                                class="menu-arrow"></span></a>
+                        <ul>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="register.html">Nouveau compte</a></li>
+                            <li><a href="forgot-password.html">Mot de passe oublié</a></li>
+                            <li><a href="error-404.html">Erreur</a></li>
+                        </ul>
+                    </li>
+                  
+                   
+                   
+                    
+                   
+                    
+                   
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<div class="page-wrapper">
+<div class="content container-fluid">
+<div class="page-header">
+<div class="row">
+<div class="col-sm-12">
+<div class="page-sub-header">
+<h3 class="page-title">Information de l'Utilisateur</h3>
+<ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="{% url 'list_utili' %}">Utilisateurs</a></li>
+<li class="breadcrumb-item active">Information de l'Utilisateur</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-body">
+<div class="row">
+<div class="col-md-12">
+<div class="about-info">
+<h4>Photo <span><a href="javascript:;"><i class="feather-more-vertical"></i></a></span></h4>
+</div>
+<div class="student-profile-head">
+<div class="profile-bg-img">
+<img hidden src="" alt="Profile">
+</div>
+<div class="row">
+<div class="col-lg-4 col-md-4">
+<div class="profile-user-box">
+<div class="profile-user-img">
+
+{% if details.Photo %}
+<img src="http://127.0.0.1:8000//{{details.Photo.url}}" alt="Profile">
+{% else %}
+<img src="" alt="Profile">
+{% endif %}
+    
+
+<div class="form-group students-up-files profile-edit-icon mb-0">
+<div class="uplod d-flex">
+<label class="file-upload profile-upbtn mb-0">
+<i class="feather-edit-3"></i><input type="file">
+</label>
+</div>
+</div>
+</div>
+<div class="names-profiles">
+<h4>{{details.username}}</h4>
+<h5>{{details.Statut}}</h5>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-4 d-flex align-items-center">
+<div class="follow-group">
+<div class="students-follows">
+<h5>Projets</h5>
+<h4>{{userp}}</h4>
+</div>
+<div class="students-follows">
+<h5>Contributions</h5>
+<h4>{{usercont}}</h4>
+</div>
+
+</div>
+</div>
+<div class="col-lg-4 col-md-4 d-flex align-items-center">
+<div class="follow-btn-group">
+<button type="submit" class="btn btn-info follow-btns">Voir Projets</button>
+<button type="submit" class="btn btn-info message-btns">Voir Contributions</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-4">
+<div class="student-personals-grp">
+<div class="card">
+<div class="card-body">
+<div class="heading-detail">
+<h4>Informations Personelles:</h4>
+</div>
+<div class="personal-activity">
+<div class="personal-icons">
+<i class="feather-user"></i>
+</div>
+<div class="views-personal">
+<h4>Name</h4>
+<h5>{{details.username}}-{{details.first_name}}</h5>
+</div>
+</div>
+<div class="personal-activity">
+    <div class="personal-icons">
+    <img src="assets/img/icons/buliding-icon.svg" alt="">
+    </div>
+    <div class="views-personal">
+    <h4>Statut </h4>
+    <h5>{{details.statut}}</h5>
+    </div>
+</div>
+
+<div class="personal-activity">
+    <div class="personal-icons">
+    <i class="feather-mail"></i>
+    </div>
+    <div class="views-personal">
+    <h4>Email</h4>
+    <h5>{{details.email}}</h5>
+    </div>
+</div>
+
+<div class="personal-activity">
+<div class="personal-icons">
+<i class="feather-calendar"></i>
+</div>
+<div class="views-personal">
+<h4>Date d'inscription</h4>
+<h5>{{details.Dates}}</h5>
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="col-lg-8">
+<div class="student-personals-grp">
+<div class="card mb-0">
+<div class="card-body">
+<div class="heading-detail">
+<h4>Details sur ses Projets</h4>
+</div>
+<div class="hello-park">
+<h5><b>I. Projets</b></h5>
+    <ol>
+        {% for l in userprolist %}
+        <li> <b></b>{{l.Titre}}</li>
+        {% endfor %}
+    </ol>
+</div>
+<div class="hello-park">
+    <h5><b>II. Contributions</b></h5>
+        <ol>
+            {% for l in usercontlist %}
+            <li> <b></b>{{l.Projets}}</li>
+            {% endfor %}
+        </ol>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<footer>
+<p>Copyright © 2022 Dreamguys.</p>
+</footer>
+
+</div>
+
+</div>
+
+
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'assets/js/feather.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/slimscroll/jquery.slimscroll.min.js' %}"></script>
+
+<script src="{% static 'assets/plugins/datatables/datatables.min.js' %}"></script>
+
+<script src="{% static 'assets/js/script.js' %}"></script>
+</body>
+</html>
